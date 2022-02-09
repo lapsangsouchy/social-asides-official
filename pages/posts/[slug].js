@@ -19,13 +19,15 @@ const PostPage = ({ post }) => {
         </Link>
       </p>
       <div className={singlePostStyles.singlePostWrapper}>
-        <Image
-          src={post.feature_image}
-          className={singlePostStyles.singlePostImg}
-          width={500}
-          height={500}
-          alt='feature image'
-        />
+        {post.feature_image && (
+          <Image
+            src={post.feature_image}
+            className={singlePostStyles.singlePostImg}
+            width={500}
+            height={500}
+            alt='feature image'
+          />
+        )}
         <h1 className={singlePostStyles.singlePostTitle}>{post.title}</h1>
         <div
           className={singlePostStyles.singlePostDesc}
