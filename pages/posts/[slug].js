@@ -45,7 +45,7 @@ export async function getStaticPaths() {
     params: { slug: post.slug },
   }));
 
-  return { paths, fallback: false, revalidate: 1 };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps(context) {
