@@ -1,11 +1,37 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { getSinglePost, getPosts } from '../../lib/posts';
+import singlePostStyles from '../../styles/SinglePost.module.css';
 
-const PostPage = (props) => {
+const PostPage = ({ post }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
-    <div>
-      <img src={props.post.feature_image} alt='feature image' />
-      <h1>{props.post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
+    <div className={singlePostStyles.singlePost}>
+      <p className={singlePostStyles.goback}>
+        <Link href='/'>
+          <a>Go Back</a>
+        </Link>
+      </p>
+      <div className={singlePostStyles.singlePostWrapper}>
+        <Image
+          src={post.feature_image}
+          className={singlePostStyles.singlePostImg}
+          width={500}
+          height={500}
+          alt='feature image'
+        />
+        <h1 className={singlePostStyles.singlePostTitle}>{post.title}</h1>
+        <div
+          className={singlePostStyles.singlePostDesc}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+      </div>
     </div>
   );
 };

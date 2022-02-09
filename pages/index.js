@@ -1,23 +1,26 @@
 import styles from '../styles/Home.module.css';
+import Posts from '../components/Posts';
 import { getPosts } from '../lib/posts';
+import { getSettings } from '../lib/settings';
 import Link from 'next/link';
+import Header from '../components/Header';
 
-const Index = (props) => (
-  <ul>
-    {props.posts.map((post) => (
-      <li key={post.id}>
-        <Link href={`/posts/${post.slug}`}>
-          <a>{post.title}</a>
-        </Link>
-      </li>
-    ))}
-  </ul>
-);
+const Home = ({ posts, settings }) => {
+  return (
+    <>
+      <Header settings={settings} />
+      <div className={styles.home}>
+        <Posts posts={posts} />
+      </div>
+    </>
+  );
+};
 
-export default Index;
+export default Home;
 
 export async function getStaticProps(context) {
   const posts = await getPosts();
+  const settings = await getSettings();
 
   if (!posts) {
     return {
@@ -26,7 +29,7 @@ export async function getStaticProps(context) {
   }
 
   return {
-    props: { posts },
+    props: { posts, settings },
     revalidate: 1,
   };
 }
