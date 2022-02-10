@@ -23,8 +23,9 @@ const PostPage = ({ post }) => {
           <Image
             src={post.feature_image}
             className={singlePostStyles.singlePostImg}
-            width={500}
+            width={800}
             height={500}
+            // layout='responsive'
             alt='feature image'
           />
         )}

@@ -1,13 +1,11 @@
 .posts {
-  flex: 9;
   display: flex;
   flex-wrap: wrap;
-  margin: 20px;
 }
 
 .post {
   width: 385px;
-  margin: 0px 25px 40px 25px;
+  margin: 20px 25px 20px 50px;
 }
 
 .postImg {
@@ -18,19 +16,22 @@
 }
 
 .postInfo {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: center; */
 }
 
-.postCat {
-  font-family: 'Varela Round', Arial, Helvetica, sans-serif;
-  font-size: 11px;
+.postAuthor {
+  /* font-family: 'Varela Round', Arial, Helvetica, sans-serif; */
+  font-size: 16px;
   font-weight: 400;
   color: #be9656;
-  line-height: 19px;
-  margin-top: 15px;
-  margin-right: 10px;
+  align-self: flex-start;
+  /* line-height: 19px; */
+  /* margin-top: 15px; */
+  /* margin-right: 10px; */
+  /* align-self: center; */
   cursor: pointer;
 }
 
