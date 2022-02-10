@@ -6,15 +6,13 @@ const Post = ({ post }) => {
   return (
     <div className={postStyles.post}>
       {post.feature_image && (
-        <Link href={`/posts/${post.slug}`}>
-          <Image
-            src={post.feature_image}
-            className={postStyles.postImg}
-            width={500}
-            height={500}
-            alt='Post Image'
-          />
-        </Link>
+        <Image
+          src={post.feature_image}
+          className={postStyles.postImg}
+          width={500}
+          height={500}
+          alt='Post Image'
+        />
       )}
       <div className={postStyles.postInfo}>
         <Link href={`/posts/${post.slug}`}>

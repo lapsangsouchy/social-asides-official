@@ -17,20 +17,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className={navStyles.navRight}>
-        <ul className={navStyles.navList}>
-          <li className={navStyles.navListItem}>
-            <Link href='#'>
-              <a>LOGIN</a>
-            </Link>
-          </li>
-          <li className={navStyles.navListItem}>
-            <Link href='#'>
-              <a>REGISTER</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <div className={navStyles.navRight}></div>
     </div>
   );
 };
